@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+   <meta http-equiv="refresh" content="4">
+   <title>WAR FIELD BOT</title>
+</head>
+
+<body>
+   <center>
+   <img src="http://www.srcw.in/images/srcw.gif" /> 
+   <h1><font color="red">WAR FIELD NAVIGATION CONTROL</font></h1>
+   <img src="https://s-media-cache-ak0.pinimg.com/236x/36/f0/35/36f0351dfff18546ae6cce63c2d886ed.jpg" height="100" width="100" />
+
+   <br/><br/><br/>
+   <h2>  Mine Sensor Status ==>  {{ 5  }}</h2>   
+   {% for pin in pins %}
+   {% if pins[pin].name == "FORWARD" %}
+   <button type="button"><a href="/{{pin}}/forward">  FORWARD </a></button>
+   {% endif %}
+   {% if pins[pin].name == "BACKWARD" %}
+   <button type="button"><a href="/{{pin}}/backward"> BACKWARD </a></button>
+   {% endif %}
+   {% if pins[pin].name == "LEFT" %}
+   <button type="button"><a href="/{{pin}}/left"> ROBO LEFT</a></button>
+   {% endif %}
+   {% if pins[pin].name == "RIGHT" %}
+   <button type="button"><a href="/{{pin}}/right">ROBO RIGHT</a></button>
+   {% endif %}
+   {% if pins[pin].name == "STOP" %}
+   <button type="button"><a href="/{{pin}}/stop">ROBO STOP</a></button>
+   {% endif %}
+   {% if pins[pin].name =="CAML" %}
+   <button type="button"><a href="/{{pin}}/coff">CAMERA LEFT </a></button>
+   {% endif %}
+   {% if pins[pin].name =="CAMR" %}
+   <button type="button"><a href="/{{pin}}/con">CAMERA RIGHT</a></button>
+   {% endif %}
+   {% if pins[pin].name =="MON" %}
+   <button type="button"><a href="/{{pin}}/mon">ALERT SOUND</a></button>
+   {% endif %}
+   {% endfor %}
+   {% if message %}
+   <br/><br/>
+   <h1><font color="green">{{ message }}</font></h1>
+   {% endif %}<br/><br/>
+   <iframe src="http://192.168.43.159:8081/", width="640", height="480"></frame></center>
+</body>
+</html>
+
+
